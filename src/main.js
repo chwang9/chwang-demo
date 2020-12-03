@@ -8,13 +8,13 @@ import ElementUI from "element-ui";
 import "./styles/global.scss";
 Vue.use(ElementUI);
 
-import SvgIcon from "svg-icon";
-import "svg-icon/main.css";
-Vue.use(SvgIcon);
+// import SvgIcon from "svg-icon";
+// import "svg-icon/main.css";
+// Vue.use(SvgIcon);
 
-import moment from "moment";
-Vue.prototype.$moment = moment
-moment.locale('zh-cn')
+// import moment from "moment";
+// Vue.prototype.$moment = moment
+// moment.locale('zh-cn')
 
 import 'mavon-editor/dist/css/index.css'
 import mavonEditor from 'mavon-editor'
