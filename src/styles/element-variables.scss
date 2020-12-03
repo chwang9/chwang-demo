@@ -1,0 +1,24 @@
+$--color-primary: #2e71e6;
+$--color-success: #26bd58;
+$--color-warning: #fa9119;
+$--color-danger: #f03a4c;
+$--color-info: #2e71e6;
+$--color-text-primary: rgba(0, 0, 0, 0.85);
+$--color-text-regular: rgba(0, 0, 0, 0.65);
+$--color-text-secondary: rgba(0, 0, 0, 0.45);
+$--color-text-placeholder: rgba(0, 0, 0, 0.25);
+$--border-color-base: rgba(0, 0, 0, 0.15);
+$--border-color-light: rgba(0, 0, 0, 0.1);
+$--border-color-lighter: rgba(0, 0, 0, 0.06);
+$--border-color-extra-light: rgba(0, 0, 0, 0.03);
+$--background-color-base: $--border-color-lighter;
+$--table-header-background-color: $--border-color-extra-light;
+$--font-size-extra-large: 20px;
+$--font-size-large: 18px;
+$--font-size-medium: 16px;
+$--font-size-base: 14px;
+$--font-size-small: 13px;
+$--font-size-extra-small: 12px;
+
+// 覆盖字体路径变量是必需的
+$--font-path: "~element-ui/lib/theme-chalk/fonts";

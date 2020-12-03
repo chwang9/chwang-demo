@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $--font-size-base;
+  color: $--color-text-regular;
+  background-color: $--background-color-base;
+}
+
+ul,
+ol {
+  list-style: none;
+}
