@@ -7,9 +7,9 @@ export async function word(params) {
   });
 }
 
-// export async function accountLogout(params) {
-//   return request("/user/logout", {
-//     method: "get",
-//     params: params
-//   });
-// }
+export async function accountLogout(params) {
+  return request("/user/logout", {
+    method: "get",
+    params: params
+  });
+}
