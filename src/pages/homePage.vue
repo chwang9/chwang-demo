@@ -75,7 +75,7 @@
 
 <script>
 const previewText = resolve => require(['./homePage/previewText.vue'],resolve)
-import moment from 'moment'
+// import moment from 'moment'
 export default {
   components: {
     previewText
