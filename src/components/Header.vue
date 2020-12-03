@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="logo">智能语义云平台分系统</div>
+    <div class="logo">分系统</div>
     <div class="nav-menu">
       <ul class="nav">
         <router-link tag="li" to="/homePage">首页</router-link>
