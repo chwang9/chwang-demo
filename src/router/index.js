@@ -27,12 +27,6 @@ const routes = [
     meta: { title: "任务管理1" }
   },
   {
-    path: "/CSS1",
-    name: "任务管理1",
-    component: () => import("@/pages/CSS1"),
-    meta: { title: "任务管理1" }
-  },
-  {
     path: "/vuex",
     name: "任务管理3",
     component: () => import("@/pages/vuex"),

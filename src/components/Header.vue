@@ -6,7 +6,6 @@
         <router-link tag="li" to="/homePage">首页</router-link>
         <router-link tag="li" to="/taskManagement">任务管理</router-link>
         <router-link tag="li" to="/CSS">任务管理1</router-link>
-        <router-link tag="li" to="/CSS1">任务管理2</router-link>
         <router-link tag="li" to="/vuex">任务管理3</router-link>
         <router-link tag="li" to="/vuex1">任务管理4</router-link>
       </ul>
