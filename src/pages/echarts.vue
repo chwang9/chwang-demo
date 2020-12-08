@@ -1,5 +1,8 @@
 <template>
-    <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+  <div>
+      <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
+      <v-md-editor v-model="text" height="400px"></v-md-editor>
+  </div>
 </template>
 <script>
 import echarts from 'echarts'
@@ -7,6 +10,7 @@ export default {
   name: 'hello',
   data () {
     return {
+      text: '',
       msg: 'Welcome to Your Vue.js App'
     }
   },
