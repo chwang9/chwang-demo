@@ -4,6 +4,10 @@ import router from "./router";
 import "./router/authority";
 import store from "./store";
 
+// 引入echarts
+import * as echarts from "echarts";
+Vue.prototype.$echarts = echarts
+
 import ElementUI from "element-ui";
 import "./styles/global.scss";
 Vue.use(ElementUI);
@@ -15,6 +19,8 @@ Vue.use(ElementUI);
 // import moment from "moment";
 // Vue.prototype.$moment = moment
 // moment.locale('zh-cn')
+
+
 
 import 'mavon-editor/dist/css/index.css'
 import mavonEditor from 'mavon-editor'

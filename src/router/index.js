@@ -15,6 +15,12 @@ const routes = [
     meta: { title: "首页" }
   },
   {
+    path: "/echarts",
+    name: "echarts",
+    component: () => import("@/pages/echarts"),
+    meta: { title: "echarts" }
+  },
+  {
     path: "*",
     component: () => import("@/pages/404"),
     meta: { title: "404" }

@@ -4,6 +4,7 @@
     <div class="nav-menu">
       <ul class="nav">
         <router-link tag="li" to="/homePage">首页</router-link>
+        <router-link tag="li" to="/echarts">echarts</router-link>
       </ul>
     </div>
     <div class="user">
