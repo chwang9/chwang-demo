@@ -1,7 +1,11 @@
 <template>
   <div class="header">
     <div class="logo">分系统</div>
-    <el-button :class="isCollapse?'el-icon-s-fold':'el-icon-s-unfold'" @click="closeMenu(true)" v-model="isCollapse"></el-button>
+    <el-switch
+        v-model="switchValue"
+        @change="isVoiceMethods">    
+    </el-switch>
+    <!-- <el-button :class="switchValue?'el-icon-s-fold':'el-icon-s-unfold'" @click="isVoiceMethods(true)" v-model="switchValue"></el-button> -->
     <div class="nav-menu">
       <ul class="nav">
         <router-link tag="li" to="/homePage">首页</router-link>
@@ -22,7 +26,7 @@
 </template>
 
 <script>
-
+import {mapState, mapMutations, mapActions} from "vuex"
 export default {
   name: 'Sidebar',
   components: {},
@@ -30,12 +34,29 @@ export default {
   data() {
     return {
       userName: "sadmin",
-      isCollapse: false
+      switchValue: false
     }
   },
+  computed: {
+    ...mapState("home", {
+        isVoice: state => state.isVoice
+    })
+  },
+  watch:{
+    isVoice () {
+        this.switchValue = this.isVoice
+    }
+  },
+  created(){
+    this.switchValue = this.isVoice
+  },
   methods: {
-    closeMenu(val) {
-      this.isCollapse = !this.isCollapse
+        ...mapActions("home", [
+       "isVoiceSet"
+    ]),
+    isVoiceMethods(val) {
+      this.isVoiceSet(val)
+      // this.switchValue = !this.switchValue
     },
     // 退出
     onCommand(command) {

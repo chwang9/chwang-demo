@@ -4,7 +4,7 @@
              class="el-menu-vertical-demo" 
              @open="handleOpen" 
              @close="handleClose"
-             :collapse="isCollapse">
+             :collapse="isVoice">
     <el-menu-item index="2">
         <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
@@ -22,12 +22,17 @@
 </template>
 
 <script>
+import {mapState, mapMutations, mapActions} from "vuex"
 export default {
   name: 'leftNav',
   data () {
     return {
-        // isCollapse: true
     }
+  },
+  computed: {
+    ...mapState("home", {
+        isVoice: state => state.isVoice
+    })
   },
   methods: {
       handleOpen(key, keyPath) {
@@ -44,11 +49,12 @@ export default {
        color:#fff;
        font-size:10px;
        height:100%;
-       /* background-color: #1D8ce0; */
        float:left;
     }
-      .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
+    .el-menu-vertical-demo{
+      height: 100%;
+    }
+    .el-menu-vertical-demo:not(.el-menu--collapse) {
+      width: 180px;
   }
 </style>
