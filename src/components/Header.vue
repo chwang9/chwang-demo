@@ -1,6 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">分系统</div>
+    <el-button :class="isCollapse?'el-icon-s-fold':'el-icon-s-unfold'" @click="closeMenu(true)" v-model="isCollapse"></el-button>
     <div class="nav-menu">
       <ul class="nav">
         <router-link tag="li" to="/homePage">首页</router-link>
@@ -29,9 +30,13 @@ export default {
   data() {
     return {
       userName: "sadmin",
+      isCollapse: false
     }
   },
   methods: {
+    closeMenu(val) {
+      this.isCollapse = !this.isCollapse
+    },
     // 退出
     onCommand(command) {
       if (command === "changePwd") {

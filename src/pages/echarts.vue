@@ -1,7 +1,7 @@
 <template>
   <div>
       <div id="myChart" :style="{width: '300px', height: '300px'}"></div>
-      <v-md-editor v-model="text" height="400px"></v-md-editor>
+      <!-- <v-md-editor v-model="text" height="400px"></v-md-editor> -->
   </div>
 </template>
 <script>
