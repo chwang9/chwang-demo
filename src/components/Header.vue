@@ -1,15 +1,14 @@
 <template>
   <div class="header">
-    <div class="logo">分系统</div>
-    <el-switch
+    <div class="logo">{{title}}</div>
+    <!-- <el-switch
         v-model="switchValue"
         @change="isVoiceMethods">    
-    </el-switch>
+    </el-switch> -->
     <!-- <el-button :class="switchValue?'el-icon-s-fold':'el-icon-s-unfold'" @click="isVoiceMethods(true)" v-model="switchValue"></el-button> -->
     <div class="nav-menu">
       <ul class="nav">
-        <router-link tag="li" to="/homePage">首页</router-link>
-        <router-link tag="li" to="/echarts">echarts</router-link>
+        <!-- <router-link tag="li" to="/homePage">首页</router-link> -->
       </ul>
     </div>
     <div class="user">
@@ -33,6 +32,7 @@ export default {
   props: {},
   data() {
     return {
+      title: window.config.systemName,
       userName: "sadmin",
       switchValue: false
     }

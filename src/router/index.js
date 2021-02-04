@@ -15,10 +15,10 @@ const routes = [
     meta: { title: "首页" }
   },
   {
-    path: "/echarts",
-    name: "echarts",
-    component: () => import("@/pages/echarts"),
-    meta: { title: "echarts" }
+    path: "/test",
+    name: "首页1",
+    component: () => import("@/pages/test"),
+    meta: { title: "首页1" }
   },
   {
     path: "*",

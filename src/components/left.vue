@@ -1,21 +1,17 @@
 <template>
   <div class="left-nav">
-    <el-menu default-active="2" 
+    <el-menu :default-active="indexPath"
+             router
              class="el-menu-vertical-demo" 
              @open="handleOpen" 
-             @close="handleClose"
-             :collapse="isVoice">
-    <el-menu-item index="2">
+             @close="handleClose">
+    <el-menu-item index="/homePage">
         <i class="el-icon-menu"></i>
+        <span slot="title">导航一</span>
+    </el-menu-item>
+        <el-menu-item index="/test">
+        <i class="el-icon-upload"></i>
         <span slot="title">导航二</span>
-    </el-menu-item>
-    <el-menu-item index="3">
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-    </el-menu-item>
-    <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
     </el-menu-item>
     </el-menu>
   </div>
@@ -30,9 +26,13 @@ export default {
     }
   },
   computed: {
-    ...mapState("home", {
-        isVoice: state => state.isVoice
-    })
+    indexPath(){
+      if(this.$route.path == '/homePage') {
+        return '/homePage'
+      } else {
+        return '/test'
+      }
+    }
   },
   methods: {
       handleOpen(key, keyPath) {

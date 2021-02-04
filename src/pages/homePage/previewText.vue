@@ -91,6 +91,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.title)
     this.$listeners.change() // 子组件调用父组件方法
     this.father = this.$attrs.height // 如果父传子有很多值，attrs获取父传子为在props中定义的值
   },
