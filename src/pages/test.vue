@@ -13,17 +13,52 @@ export default {
 		  var myChart = this.$echarts.init(document.getElementById('main'));
 		  // 指定图表的配置项和数据
 		  var option = {
-            xAxis: {
-                type: 'category',
-                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [{
-                data: [120, 220, 150, 80, 70, 110, 130],
-                type: 'bar',
-            }]
+    series: [{
+        type: 'gauge',
+        progress: {
+            show: true,
+            width: 18
+        },
+        axisLine: {
+            lineStyle: {
+                width: 18
+            }
+        },
+        axisTick: {
+            show: false
+        },
+        splitLine: {
+            length: 15,
+            lineStyle: {
+                width: 2,
+                color: '#999'
+            }
+        },
+        axisLabel: {
+            distance: 25,
+            color: '#999',
+            fontSize: 20
+        },
+        anchor: {
+            show: true,
+            showAbove: true,
+            size: 25,
+            itemStyle: {
+                borderWidth: 10
+            }
+        },
+        title: {
+            show: false
+        },
+        detail: {
+            valueAnimation: true,
+            fontSize: 80,
+            offsetCenter: [0, '70%']
+        },
+        data: [{
+            value: 70
+        }]
+    }]
 		  };
 		  // 使用刚指定的配置项和数据显示图表。
 		  myChart.setOption(option);

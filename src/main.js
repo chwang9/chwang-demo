@@ -20,9 +20,9 @@ import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 VueMarkdownEditor.use(vuepressTheme);
 Vue.use(VueMarkdownEditor);
 
-// import SvgIcon from "svg-icon";
-// import "svg-icon/main.css";
-// Vue.use(SvgIcon);
+import Icon from "icon";
+import "icon/main.css";
+Vue.use(Icon);
 
 // import moment from "moment";
 // Vue.prototype.$moment = moment

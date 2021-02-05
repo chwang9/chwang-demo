@@ -1,16 +1,16 @@
 <template>
   <div class="header">
-    <div class="logo">{{title}}</div>
-    <!-- <el-switch
-        v-model="switchValue"
-        @change="isVoiceMethods">    
-    </el-switch> -->
-    <!-- <el-button :class="switchValue?'el-icon-s-fold':'el-icon-s-unfold'" @click="isVoiceMethods(true)" v-model="switchValue"></el-button> -->
+    <div class="logo">
+      <Icon :component="home" style="font-size:18px;margin-right:5px;vertical-align:middle;"></Icon>
+      {{title}}
+    </div>
+
     <div class="nav-menu">
       <ul class="nav">
         <!-- <router-link tag="li" to="/homePage">首页</router-link> -->
       </ul>
     </div>
+
     <div class="user">
         <el-dropdown trigger="click" @command="onCommand" >
           <div>
@@ -26,38 +26,19 @@
 
 <script>
 import {mapState, mapMutations, mapActions} from "vuex"
+import home from "@/assets/icons/home.svg"
 export default {
   name: 'Sidebar',
   components: {},
   props: {},
   data() {
     return {
+      home,
       title: window.config.systemName,
       userName: "sadmin",
-      switchValue: false
     }
-  },
-  computed: {
-    ...mapState("home", {
-        isVoice: state => state.isVoice
-    })
-  },
-  watch:{
-    isVoice () {
-        this.switchValue = this.isVoice
-    }
-  },
-  created(){
-    this.switchValue = this.isVoice
   },
   methods: {
-        ...mapActions("home", [
-       "isVoiceSet"
-    ]),
-    isVoiceMethods(val) {
-      this.isVoiceSet(val)
-      // this.switchValue = !this.switchValue
-    },
     // 退出
     onCommand(command) {
       if (command === "changePwd") {
