@@ -21,7 +21,7 @@ export default {
                 type: 'value'
             },
             series: [{
-                data: [120, 200, 150, 80, 70, 110, 130],
+                data: [120, 220, 150, 80, 70, 110, 130],
                 type: 'bar',
             }]
 		  };
