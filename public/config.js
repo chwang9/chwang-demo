@@ -1,5 +1,5 @@
 window.config = {
-  systemName: 'xx系统'
+  systemName: '系统'
 };
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -12,7 +12,10 @@ Vue.prototype.$echarts = echarts
 import ElementUI from "element-ui";
 import "./styles/global.scss";
 Vue.use(ElementUI);
-
+// 引入antv
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
+Vue.use(Antd);
 // 引入markdown
 import VueMarkdownEditor from '@kangc/v-md-editor';
 import '@kangc/v-md-editor/lib/style/base-editor.css';

@@ -1,51 +1,77 @@
 <template>
   <div class="left-nav">
-    <el-menu :default-active="indexPath"
-             router
-             class="el-menu-vertical-demo" 
-             @open="handleOpen" 
-             @close="handleClose">
-    <el-menu-item index="/homePage">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航一</span>
-    </el-menu-item>
-    <el-menu-item index="/test">
-        <i class="el-icon-upload"></i>
-        <span slot="title">导航二</span>
-    </el-menu-item>
-        <el-menu-item index="/vuex">
-        <i class="el-icon-upload"></i>
-        <span slot="title">vuex</span>
-    </el-menu-item>
-        <el-menu-item index="/vuex1">
-        <i class="el-icon-upload"></i>
-        <span slot="title">vuex1</span>
-    </el-menu-item>
+    <el-menu router :default-active="this.$route.path" class="el-menu-vertical-demo">
+      <sideBar :list="sideBarData"></sideBar>
     </el-menu>
   </div>
 </template>
 
 <script>
-import {mapState, mapMutations, mapActions} from "vuex"
+import sideBar from '@/components/sideBar'
 export default {
   name: 'leftNav',
   data () {
     return {
+      sideBarData:    [
+          {
+            "icon": 'el-icon-star-off',
+            "path": "/homePage",     //菜单项所对应的路由路径
+            "name": "首页",     //菜单项名称
+            "children":[]        //是否有子菜单，若没有，则为[]
+          },
+          {
+             "icon": 'el-icon-video-play',
+            "path": "/zujian",
+            "name": "组件",
+            "children": [
+              {
+                "path": "/test",
+                "name": "Echarts",
+                "children":[],
+                "icon": 'el-icon-view',
+              },
+              {
+                "path": "/CSS-flex",
+                "name": "表格导入",
+                "children":[],
+                "icon": 'el-icon-folder',
+              },
+              {
+                "path": "/layout",
+                "name": "布局",
+                "children":[],
+                "icon": 'el-icon-folder',
+              }
+            ]
+          }
+       ]
     }
   },
-  computed: {
-    indexPath(){
-      if(this.$route.path == '/homePage') {
-        return '/homePage'
-      } else if (this.$route.path == '/vuex') {
-        return '/vuex'
-      } else if (this.$route.path == '/vuex1') {
-        return '/vuex1'
-      } else {
-        return '/test'
+  components: {
+    sideBar
+  },
+  watch: {
+      // 监听浏览器直接输入路由，将此路由添加到tabnavBox
+      '$route.path': function (val) {
+        console.log(val)
+        // this.selectmenu(val)
       }
-    }
-  },
+    },
+  // computed: {
+  //   indexPath(){
+  //     if(this.$route.path == '/homePage') {
+  //       return '/homePage'
+  //     } else if (this.$route.path == '/vuex') {
+  //       return '/vuex'
+  //     } else if (this.$route.path == '/vuex1') {
+  //       return '/vuex1'
+  //     } else if (this.$route.path == '/CSS-flex') {
+  //       return '/CSS-flex'
+  //     }else {
+  //       return '/test'
+  //     }
+  //   }
+  // },
   methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
